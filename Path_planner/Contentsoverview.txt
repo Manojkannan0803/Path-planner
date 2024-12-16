@@ -1,0 +1,6 @@
+1. Under "Motion primitives library" folder - motion primitives for different vehicle states(orientation angle of semi-trailer and articulation angle) can be found.
+
+2. Under "SIMULINK-PATHPLANNER": main .m script is Path_planning_run.m. Respective simulink file will run "pathplanning_checkcopy.slx". Its version is 2020b.
+Older version is also available "pathplanning_checkcopy2020a.slx".
+
+3. Under "MATLAB FILES-PATHPLANNER": main .m script is Pathplanning_Astar.m. To plot the results, use Plot_pathgenerated.m.
