@@ -1,0 +1,8 @@
+# Path planning service request
+VehicleState start_state
+VehicleState goal_state
+ObstacleMap obstacle_map
+AlgorithmConfig config
+---
+# Path planning service response
+PathPlan path_plan

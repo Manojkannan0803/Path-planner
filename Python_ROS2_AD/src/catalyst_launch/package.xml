@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>catalyst_launch</name>
+  <version>1.0.0</version>
+  <description>CATALYST launch configurations for TwinSim-inspired system</description>
+  <maintainer email="your.email@example.com">CATALYST Team</maintainer>
+  <license>MIT</license>
+
+  <exec_depend>catalyst_core</exec_depend>
+  <exec_depend>catalyst_interfaces</exec_depend>
+  <exec_depend>catalyst_algorithms</exec_depend>
+  <exec_depend>catalyst_models</exec_depend>
+  <exec_depend>catalyst_sensors</exec_depend>
+  <exec_depend>catalyst_visualization</exec_depend>
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

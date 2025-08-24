@@ -1,0 +1,9 @@
+# Plugin loading service request
+string plugin_name
+string plugin_type
+AlgorithmConfig config
+---
+# Plugin loading service response  
+bool success
+string message
+PluginStatus status
