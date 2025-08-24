@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a complete refactoring of the original monolithic path planning system using a **layered architecture** pattern inspired by TwinSim's architectural principles. The system transforms a single 364-line file into a modular, extensible, and maintainable architecture.
+This is a complete refactoring of the original monolithic path planning system using a **layered architecture** pattern inspired by XX (work)'s architectural principles. The system transforms a single 364-line file into a modular, extensible, and maintainable architecture.
 
 ## Architecture
 
@@ -259,4 +259,4 @@ The refactored system maintains compatibility with original functionality while 
 
 ---
 
-**Note**: This refactored architecture demonstrates how TwinSim's layered architectural patterns can be successfully applied to transform monolithic code into a maintainable, extensible system.
+**Note**: This refactored architecture demonstrates how XX (work)'s layered architectural patterns can be successfully applied to transform monolithic code into a maintainable, extensible system.
