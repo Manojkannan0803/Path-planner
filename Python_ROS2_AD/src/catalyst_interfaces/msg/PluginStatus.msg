@@ -1,4 +1,4 @@
-# Plugin status information (TwinSim-inspired plugin monitoring)
+# Plugin status information (XX (work)-inspired plugin monitoring)
 string plugin_id                  # Unique plugin identifier
 string plugin_name                # Human-readable plugin name
 string plugin_type                # Type: "algorithm", "model", "sensor", etc.

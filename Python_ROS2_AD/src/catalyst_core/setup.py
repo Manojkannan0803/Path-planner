@@ -19,7 +19,7 @@ setup(
     zip_safe=True,
     maintainer='CATALYST Team',
     maintainer_email='your.email@example.com',
-    description='CATALYST Core Platform - TwinSim-inspired layered architecture',
+    description='CATALYST Core Platform - XX (work)-inspired layered architecture',
     license='MIT',
     tests_require=['pytest'],
     entry_points={

@@ -59,8 +59,8 @@ sudo apt install git vim code
 
 ```bash
 # Clone the repository
-git clone <repository-url> catalyst_ws
-cd catalyst_ws
+git clone <repository-url> Python_ROS2_AD
+cd Python_ROS2_AD
 
 # Source ROS2 environment
 source /opt/ros/humble/setup.bash
@@ -89,7 +89,7 @@ colcon build --packages-select catalyst_core catalyst_interfaces
 source install/setup.bash
 
 # Add to bashrc for automatic sourcing
-echo "source ~/catalyst_ws/install/setup.bash" >> ~/.bashrc
+echo "source ~/Python_ROS2_AD/install/setup.bash" >> ~/.bashrc
 ```
 
 ## Configuration Setup

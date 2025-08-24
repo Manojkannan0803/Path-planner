@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-CATALYST Base Plugin Class - TwinSim-inspired Plugin Architecture
+CATALYST Base Plugin Class - XX (work)-inspired Plugin Architecture
 
 This abstract base class defines the interface that all CATALYST plugins must implement.
-Similar to TwinSim's plugin structure, this provides standardized initialization,
+Similar to XX (work)'s plugin structure, this provides standardized initialization,
 execution, and cleanup methods.
 
 Architecture:
@@ -26,7 +26,7 @@ class CatalystPlugin(ABC, Node):
     """
     Abstract base class for all CATALYST plugins.
     
-    Inspired by TwinSim plugin architecture, this provides:
+    Inspired by XX (work) plugin architecture, this provides:
     - Standardized plugin lifecycle management
     - Performance monitoring capabilities  
     - Configuration management
@@ -52,7 +52,7 @@ class CatalystPlugin(ABC, Node):
         self._lock = threading.Lock()
         self._shutdown_requested = False
         
-        # Status publisher (TwinSim-style monitoring)
+        # Status publisher (XX (work)-style monitoring)
         self.status_publisher = self.create_publisher(
             PluginStatus, f'/catalyst/plugin_status/{self.plugin_id}', 10)
         
@@ -184,7 +184,7 @@ class CatalystPlugin(ABC, Node):
                 self.failed_executions += 1
     
     def _publish_status(self):
-        """Publish plugin status (TwinSim-style monitoring)."""
+        """Publish plugin status (XX (work)-style monitoring)."""
         status_msg = PluginStatus()
         status_msg.plugin_id = self.plugin_id
         status_msg.plugin_name = self.plugin_id

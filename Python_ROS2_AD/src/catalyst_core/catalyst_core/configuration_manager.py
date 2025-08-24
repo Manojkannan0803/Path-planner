@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-CATALYST Configuration Manager - TwinSim-inspired Configuration System
+CATALYST Configuration Manager - XX (work)-inspired Configuration System
 
-This class manages system and plugin configurations, similar to TwinSim's
+This class manages system and plugin configurations, similar to XX (work)'s
 configuration management. It provides:
 - YAML-based configuration loading and saving
 - Runtime configuration updates
@@ -21,7 +21,7 @@ class ConfigurationManager:
     """
     Configuration manager for CATALYST system.
     
-    Handles all configuration aspects similar to TwinSim's configuration system:
+    Handles all configuration aspects similar to XX (work)'s configuration system:
     - System-wide configuration
     - Plugin-specific configurations  
     - Runtime configuration updates

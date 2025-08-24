@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-CATALYST System Launch File - TwinSim-inspired Complete System Launch
+CATALYST System Launch File - XX (work)-inspired Complete System Launch
 
 This launch file starts the complete CATALYST system with all layers:
 1. Platform Layer (catalyst_core)
@@ -8,7 +8,7 @@ This launch file starts the complete CATALYST system with all layers:
 3. Algorithm Layer (catalyst_algorithms)
 4. Model Layer (catalyst_models)
 
-Similar to TwinSim's system startup, this orchestrates all components.
+Similar to XX (work)'s system startup, this orchestrates all components.
 """
 
 from launch import LaunchDescription
@@ -59,7 +59,7 @@ def generate_launch_description():
     config_file = LaunchConfiguration('config_file')
     
     # ========================================================================
-    # PLATFORM LAYER (TwinSim Platform equivalent)
+    # PLATFORM LAYER (XX (work) Platform equivalent)
     # ========================================================================
     
     platform_manager_node = Node(
@@ -98,7 +98,7 @@ def generate_launch_description():
     )
     
     # ========================================================================
-    # ALGORITHM LAYER (TwinSim Plugins equivalent)
+    # ALGORITHM LAYER (XX (work) Plugins equivalent)
     # ========================================================================
     
     astar_planner_node = Node(
@@ -130,7 +130,7 @@ def generate_launch_description():
     )
     
     # ========================================================================
-    # MODEL LAYER (TwinSim Models equivalent)  
+    # MODEL LAYER (XX (work) Models equivalent)  
     # ========================================================================
     
     environment_model_node = Node(
@@ -161,7 +161,7 @@ def generate_launch_description():
     )
     
     # ========================================================================
-    # SENSOR LAYER (TwinSim Interceptors equivalent)
+    # SENSOR LAYER (XX (work) Interceptors equivalent)
     # ========================================================================
     
     sensor_interceptor_node = Node(
@@ -257,7 +257,7 @@ def generate_launch_description():
         DeclareLaunchArgument('enable_rrt', default_value='false',
                             description='Enable RRT* path planner'),
         
-        # System startup sequence (TwinSim-style layered startup)
+        # System startup sequence (XX (work)-style layered startup)
         platform_group,      # Start platform layer first
         algorithm_group,     # Then algorithm plugins
         model_group,         # Then simulation models

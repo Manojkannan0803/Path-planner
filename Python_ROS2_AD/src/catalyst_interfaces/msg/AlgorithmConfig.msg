@@ -1,4 +1,4 @@
-# Algorithm configuration (TwinSim-inspired plugin configuration)
+# Algorithm configuration (XX (work)-inspired plugin configuration)
 # Allows runtime configuration of path planning algorithms
 
 string algorithm_name              # Name of algorithm (e.g., "astar", "rrt_star")

@@ -6,8 +6,7 @@ This module provides enhanced heuristic calculations for A* path planning
 that consider obstacle constraints, specifically the main DC building.
 
 Original MATLAB files: rectheur.m, rectheur1.m
-Author: Manojpriyadharson Kannan (Student number: 638628)
-Converted by: CATALYST Team
+Author: Manojpriyadharson Kannan
 
 Heuristic Features:
 - Obstacle-aware path cost estimation

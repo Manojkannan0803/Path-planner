@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
-CATALYST Platform Manager - TwinSim-inspired Platform Layer
+CATALYST Platform Manager - XX (work)-inspired Platform Layer
 
-This is the main orchestrator class, equivalent to TwinSim's Platform component.
+This is the main orchestrator class, equivalent to XX (work)'s Platform component.
 It manages the entire simulation platform including:
 - Plugin lifecycle management
 - Configuration management  
 - Simulation execution orchestration
 - Performance monitoring and logging
 
-Architecture follows TwinSim's layered design:
+Architecture follows XX (work)'s layered design:
 Platform Layer -> Interface Layer -> Algorithm Layer -> Model Layer
 """
 
@@ -31,7 +31,7 @@ from .configuration_manager import ConfigurationManager
 
 class PlatformManager(Node):
     """
-    Main CATALYST Platform Manager - TwinSim Platform equivalent.
+    Main CATALYST Platform Manager - XX (work) Platform equivalent.
     
     Responsibilities:
     1. Plugin lifecycle management (load, execute, unload)
@@ -44,7 +44,7 @@ class PlatformManager(Node):
     def __init__(self):
         super().__init__('catalyst_platform_manager')
         
-        # Core components (TwinSim architecture)
+        # Core components (XX (work) architecture)
         self.plugin_registry = PluginRegistry()
         self.config_manager = ConfigurationManager()
         
@@ -57,7 +57,7 @@ class PlatformManager(Node):
         self.execution_metrics = {}
         self.simulation_active = False
         
-        # ROS2 Services (TwinSim-style external interface)
+        # ROS2 Services (XX (work)-style external interface)
         self.plan_path_service = self.create_service(
             PlanPath, '/catalyst/plan_path', self.plan_path_callback)
         
@@ -132,7 +132,7 @@ class PlatformManager(Node):
         """
         Handle path planning service request.
         
-        This orchestrates the entire planning process similar to TwinSim's
+        This orchestrates the entire planning process similar to XX (work)'s
         simulation execution model.
         """
         start_time = time.time()
@@ -156,7 +156,7 @@ class PlatformManager(Node):
                 'config': request.config
             }
             
-            # Execute path planning (TwinSim-style plugin execution)
+            # Execute path planning (XX (work)-style plugin execution)
             result, success = planner_plugin.safe_execute(planning_input)
             
             if success and result:
@@ -232,7 +232,7 @@ class PlatformManager(Node):
         """
         Execute one complete simulation cycle.
         
-        This is the main orchestration method similar to TwinSim's
+        This is the main orchestration method similar to XX (work)'s
         simulation execution engine.
         """
         try:

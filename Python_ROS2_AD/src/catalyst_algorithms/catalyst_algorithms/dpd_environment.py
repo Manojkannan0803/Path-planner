@@ -6,8 +6,7 @@ This module defines the exact DPD (Distribution Center) scenario environment
 with all static obstacles as defined in the original MATLAB system.
 
 Original MATLAB file: DPDscenario.m
-Author: Manojpriyadharson Kannan (Student number: 638628)
-Converted by: CATALYST Team
+Author: Manojpriyadharson Kannan 
 
 Environment specifications:
 - Distribution center: 328m × 200m

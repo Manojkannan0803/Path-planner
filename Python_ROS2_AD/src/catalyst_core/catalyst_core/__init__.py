@@ -1,6 +1,6 @@
 # CATALYST Core Package - Platform Layer
 """
-This package implements the Platform Layer of the TwinSim-inspired architecture.
+This package implements the Platform Layer of the XX (work)-inspired architecture.
 
 Architecture Layers:
 1. Platform Layer (catalyst_core) - THIS PACKAGE
@@ -24,7 +24,7 @@ Architecture Layers:
    - Environment models
    - Motion primitive libraries
 
-This follows TwinSim's modular plugin architecture for autonomous vehicle systems.
+This follows XX (work)'s modular plugin architecture for autonomous vehicle systems.
 """
 
 __version__ = "1.0.0"

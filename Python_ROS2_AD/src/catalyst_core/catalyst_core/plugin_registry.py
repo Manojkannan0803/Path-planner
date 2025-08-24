@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-CATALYST Plugin Registry - TwinSim-inspired Plugin Management
+CATALYST Plugin Registry - XX (work)-inspired Plugin Management
 
-This class manages plugin lifecycle and registration, similar to TwinSim's
+This class manages plugin lifecycle and registration, similar to XX (work)'s
 plugin management system. It provides:
 - Dynamic plugin loading and unloading
 - Plugin discovery and registration  
@@ -22,7 +22,7 @@ class PluginRegistry:
     """
     Plugin registry for managing CATALYST plugins.
     
-    Similar to TwinSim's plugin management, this handles:
+    Similar to XX (work)'s plugin management, this handles:
     - Plugin discovery and loading
     - Plugin lifecycle management
     - Plugin health monitoring

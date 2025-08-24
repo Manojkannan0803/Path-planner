@@ -3,7 +3,7 @@
 <package format="3">
   <name>catalyst_interfaces</name>
   <version>1.0.0</version>
-  <description>CATALYST message and service interfaces for TwinSim-inspired architecture</description>
+  <description>CATALYST message and service interfaces for XX (work)-inspired architecture</description>
   <maintainer email="your.email@example.com">CATALYST Team</maintainer>
   <license>MIT</license>
 

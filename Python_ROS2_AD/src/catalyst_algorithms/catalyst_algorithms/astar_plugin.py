@@ -3,11 +3,10 @@
 CATALYST A* Path Planning Plugin - Converted from MATLAB Pathplanning_Astar.m
 
 This plugin implements the A* path planning algorithm converted from the original
-MATLAB implementation. It follows the TwinSim plugin architecture pattern.
+MATLAB implementation. It follows the XX (work) plugin architecture pattern.
 
 Original MATLAB file: Pathplanning_Astar.m
-Author: Manojpriyadharson Kannan (Student number: 638628)
-Converted by: CATALYST Team
+Author: Manojpriyadharson Kannan 
 
 Key features converted from MATLAB:
 - A* search algorithm with motion primitives
@@ -65,7 +64,7 @@ class AStarState:
 
 class AStarPathPlanner(CatalystPlugin):
     """
-    A* Path Planning Plugin - TwinSim Plugin Architecture
+    A* Path Planning Plugin - XX (work) Plugin Architecture
     
     Converted from MATLAB Pathplanning_Astar.m with the following structure:
     1. Initialize algorithm parameters (from MATLAB global variables)
@@ -111,7 +110,7 @@ class AStarPathPlanner(CatalystPlugin):
         Initialize the A* plugin with configuration.
         
         Args:
-            config: Algorithm configuration from TwinSim-style config system
+            config: Algorithm configuration from XX (work)-style config system
             
         Returns:
             bool: True if initialization successful

@@ -8,8 +8,7 @@ appropriate angular ranges for motion primitives based on the presence
 of obstacles in the vehicle's forward path.
 
 Original MATLAB file: virtualobs_check.m
-Author: Manojpriyadharson Kannan (Student number: 638628)
-Converted by: CATALYST Team
+Author: Manojpriyadharson Kannan 
 
 Features:
 - Forward-looking obstacle detection
