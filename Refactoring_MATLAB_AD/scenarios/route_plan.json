@@ -1,0 +1,83 @@
+{
+  "name": "ADAS Test Route Plan",
+  "description": "Multi-segment route for testing behavioral planning integration",
+  "vehicle_constraints": {
+    "max_steering_angle": 30,
+    "max_speed": 10.0,
+    "min_turning_radius": 5.0
+  },
+  "segments": [
+    {
+      "id": 1,
+      "name": "Initial Straight Segment",
+      "type": "straight",
+      "start_pose": [75.0, 45.0, 180.0, 0.0],
+      "end_pose": [65.0, 50.0, 200.0, 0.0],
+      "attributes": {
+        "max_speed": 5.0,
+        "end_speed": 3.0,
+        "turn_maneuver": false,
+        "stop_line": false,
+        "algorithm": "astar",
+        "priority": "normal"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Left Turn Maneuver",
+      "type": "turn",
+      "start_pose": [65.0, 50.0, 200.0, 0.0],
+      "end_pose": [62.0, 58.0, 250.0, 0.0],
+      "attributes": {
+        "max_speed": 3.0,
+        "end_speed": 2.0,
+        "turn_maneuver": true,
+        "stop_line": false,
+        "algorithm": "astar",
+        "priority": "high"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Final Approach",
+      "type": "straight",
+      "start_pose": [62.0, 58.0, 250.0, 0.0],
+      "end_pose": [60.0, 64.0, 270.0, 0.0],
+      "attributes": {
+        "max_speed": 4.0,
+        "end_speed": 0.0,
+        "turn_maneuver": false,
+        "stop_line": true,
+        "algorithm": "astar",
+        "priority": "high"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Parking Maneuver",
+      "type": "parking",
+      "start_pose": [60.0, 64.0, 270.0, 0.0],
+      "end_pose": [58.0, 66.0, 270.0, 0.0],
+      "attributes": {
+        "max_speed": 1.0,
+        "end_speed": 0.0,
+        "turn_maneuver": true,
+        "stop_line": true,
+        "algorithm": "rrt",
+        "priority": "critical"
+      }
+    }
+  ],
+  "global_constraints": {
+    "planning_horizon": 50.0,
+    "segment_tolerance": 2.0,
+    "goal_tolerance": [1.0, 1.0, 5.0],
+    "replanning_distance": 10.0
+  },
+  "scenario_info": {
+    "environment": "urban_parking",
+    "obstacles": "static",
+    "weather": "clear",
+    "traffic": "none"
+  }
+}

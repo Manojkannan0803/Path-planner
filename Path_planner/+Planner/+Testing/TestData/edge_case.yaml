@@ -1,0 +1,40 @@
+vehicle:
+  length: 3.0
+  width: 1.5
+  wheelbase: 2.0
+  rear_axle_distance: 1.0
+  max_steering_angle: 30
+  max_steering_rate: 20
+  min_turning_radius: 3.46
+  max_velocity: 5.0
+  max_acceleration: 1.5
+  max_jerk: 1.0
+  safety_margin_static: 0.1
+  safety_margin_dynamic: 0.2
+  emergency_stop_distance: 1.0
+
+planning:
+  global_planner_timeout: 500
+  replan_timeout: 100
+  max_planning_iterations: 1000
+  spatial_resolution: 0.5
+  angular_resolution: 15.0
+  cost_weights:
+    length: 1.0
+    time: 0.5
+    comfort: 0.3
+    efficiency: 0.2
+    reverse_penalty: 1.5
+
+environment:
+  max_obstacles: 10
+  max_dynamic_objects: 1
+  parking_space_width: 2.0
+  planning_horizon: 15.0
+
+simulation:
+  base_sample_time: 0.05
+  global_planner_rate: 0.5
+  local_adapter_rate: 10.0
+  trajectory_gen_rate: 20.0
+  safety_monitor_rate: 50.0

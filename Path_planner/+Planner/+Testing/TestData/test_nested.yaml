@@ -1,0 +1,11 @@
+vehicle:
+  length: 4.5
+  width: 2.0
+
+planning:
+  timeout: 1000
+  weights:
+    length: 1.0
+    time: 0.8
+    nested:
+      deep_value: 42

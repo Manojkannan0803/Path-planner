@@ -1,0 +1,68 @@
+# Vehicle Configuration - Autonomous Valet Parking
+# Date: 2025-09-23
+# Package: +Planner
+# Phase: 1A Foundation
+
+# Vehicle Physical Parameters
+vehicle:
+  # Dimensions (meters)
+  length: 4.07          # Overall vehicle length
+  width: 1.75           # Overall vehicle width  
+  wheelbase: 2.55       # Distance between front and rear axles
+  rear_axle_distance: 1.53  # Distance from rear axle to vehicle rear
+  
+  # Steering Characteristics
+  max_steering_angle: 44    # Maximum steering wheel angle (degrees)
+  max_steering_rate: 35     # Maximum steering rate (degrees/second)
+  min_turning_radius: 2.64  # Minimum turning radius (meters) - calculated from wheelbase/tan(max_steering_angle)
+  
+  # Performance Limits
+  max_velocity: 8.0         # Maximum velocity (m/s)
+  max_acceleration: 2.5     # Maximum acceleration (m/s²)
+  max_jerk: 1.5            # Maximum jerk (m/s³)
+  
+  # Safety Parameters
+  safety_margin_static: 0.75    # Static obstacle clearance (meters)
+  safety_margin_dynamic: 1.5    # Dynamic obstacle clearance (meters)
+  emergency_stop_distance: 2.0  # Emergency braking distance (meters)
+
+# Planning Parameters
+planning:
+  # Global Planner
+  global_planner_timeout: 1250      # Initial planning timeout (ms)
+  replan_timeout: 200              # Replanning timeout (ms)
+  max_planning_iterations: 10000    # Maximum A* iterations
+  
+  # State Discretization
+  spatial_resolution: 0.25      # Grid resolution (meters)
+  angular_resolution: 7.5       # Heading discretization (degrees)
+  
+  # Cost Function Weights
+  cost_weights:
+    length: 1.0          # Path length weight
+    time: 0.8            # Time-to-goal weight  
+    comfort: 0.6         # Comfort (low curvature) weight
+    efficiency: 0.4      # Energy efficiency weight
+    reverse_penalty: 2.0 # Penalty for reverse maneuvers
+
+# Environment Constraints (Phase 1)
+environment:
+  max_obstacles: 50           # Maximum static obstacles
+  max_dynamic_objects: 3      # Maximum pedestrians + vehicles
+  parking_space_width: 2.3    # Minimum parking space width (meters)
+  planning_horizon: 30.0      # Planning horizon distance (meters)
+
+# System Performance Targets
+performance:
+  planning_success_rate: 0.95     # Target success rate
+  average_planning_time: 800      # Target average planning time (ms)
+  collision_avoidance_rate: 0.995 # Target collision avoidance rate
+  path_optimality: 0.85          # Path optimality vs theoretical minimum
+
+# Simulation Parameters  
+simulation:
+  base_sample_time: 0.02      # Base Simulink sample time (50Hz)
+  global_planner_rate: 1.0    # Global planner execution rate (Hz)
+  local_adapter_rate: 20.0    # Local path adapter rate (Hz)
+  trajectory_gen_rate: 50.0   # Trajectory generator rate (Hz)
+  safety_monitor_rate: 100.0  # Safety monitor rate (Hz)

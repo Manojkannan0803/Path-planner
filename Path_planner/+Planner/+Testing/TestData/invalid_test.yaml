@@ -1,0 +1,14 @@
+vehicle:
+  length: -1.0
+  width: 2.0
+  wheelbase: 3.0
+  rear_axle_distance: 1.5
+  max_steering_angle: 45
+  max_steering_rate: 30
+  min_turning_radius: 5.0
+  max_velocity: 10.0
+  max_acceleration: 3.0
+  max_jerk: 2.0
+  safety_margin_static: 0.5
+  safety_margin_dynamic: 1.0
+  emergency_stop_distance: 2.0
