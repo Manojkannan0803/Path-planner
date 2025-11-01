@@ -1,8 +1,7 @@
 # CATALYST System Architecture Documentation
 
 **Date:** August 23, 2025  
-**Version:** 1.0  
-**Status:** Production-Ready  
+**Version:** 1.0
 
 ---
 
@@ -41,7 +40,7 @@ catalyst_ws/src/
 
 **Purpose:** Foundation framework providing plugin architecture, platform management, and core services.
 
-### **Architecture Pattern:** XX (work)-Inspired Plugin Framework
+### **Architecture Pattern:** Plugin Framework
 
 ```
 catalyst_core/
@@ -79,10 +78,10 @@ class CatalystPlugin(ABC, Node):
 - **Hot-Swappable:** Runtime plugin loading and unloading capability
 - **Thread-Safe:** Concurrent execution support with proper synchronization
 
-#### **🎮 `platform_manager.py` - System Orchestrator**
+#### **`platform_manager.py` - System Orchestrator**
 ```python
 class PlatformManager(Node):
-    """Main CATALYST Platform Manager - XX (work) Platform equivalent."""
+    """Main CATALYST Platform Manager."""
 ```
 
 **Responsibilities:**
@@ -110,7 +109,7 @@ class PluginRegistry:
 - Dependency resolution between plugins
 - Plugin status tracking and health monitoring
 
-#### **⚙️ `configuration_manager.py` - Configuration System**
+#### **`configuration_manager.py` - Configuration System**
 ```python
 class ConfigurationManager:
     """Centralized configuration management system."""
@@ -148,7 +147,7 @@ catalyst_interfaces/
 
 ### **Message Definitions**
 
-#### **🚗 `VehicleState.msg` - Vehicle State Representation**
+#### **`VehicleState.msg` - Vehicle State Representation**
 ```yaml
 # Converted from MATLAB state structure in Pathplanning_Astar.m
 float64 x, y, xa, ya              # Position coordinates [m]
@@ -161,7 +160,7 @@ builtin_interfaces/Time stamp     # Timestamp
 
 **Purpose:** Complete vehicle state representation including position, orientation, costs, and motion history for A* path planning.
 
-#### **🚧 `ObstacleMap.msg` - Environment Representation**
+#### **`ObstacleMap.msg` - Environment Representation**
 ```yaml
 # Obstacle definitions from DPDscenario.m
 ObstaclePolygon[] obstacles       # Array of polygonal obstacles
@@ -172,7 +171,7 @@ builtin_interfaces/Time stamp     # Map timestamp
 
 **Purpose:** Complete environment representation including static obstacles from the DPD (Distribution Center) scenario.
 
-#### **🛣️ `PathPlan.msg` - Generated Path**
+#### **`PathPlan.msg` - Generated Path**
 ```yaml
 VehicleState[] waypoints          # Path waypoints with full state
 MotionPrimitive[] primitives      # Motion primitives for execution
@@ -184,7 +183,7 @@ string algorithm_used            # Algorithm identifier
 
 **Purpose:** Complete path plan output from A* algorithm including waypoints, motion primitives, and metadata.
 
-#### **🎯 `MotionPrimitive.msg` - Motion Primitive Definition**
+#### **`MotionPrimitive.msg` - Motion Primitive Definition**
 ```yaml
 # From MATLAB motion primitive files (.mat)
 int32 primitive_id               # Unique primitive identifier
@@ -201,7 +200,7 @@ int32 direction                  # Forward(1) or reverse(-1)
 
 ### **Service Definitions**
 
-#### **🗺️ `PlanPath.srv` - Path Planning Service**
+#### **`PlanPath.srv` - Path Planning Service**
 ```yaml
 # Request
 VehicleState start_state         # Starting vehicle configuration
@@ -217,7 +216,7 @@ string message                   # Status or error message
 
 **Purpose:** Main service interface for requesting path plans from the A* algorithm.
 
-#### **🔌 `LoadPlugin.srv` - Plugin Management Service**
+#### **`LoadPlugin.srv` - Plugin Management Service**
 ```yaml
 # Request
 string plugin_name               # Plugin identifier
@@ -234,7 +233,7 @@ string message                  # Status or error message
 
 ---
 
-## 🧠 **3. CATALYST ALGORITHMS (`catalyst_algorithms/`)**
+## **3. CATALYST ALGORITHMS (`catalyst_algorithms/`)**
 
 **Purpose:** Core intelligence layer containing path planning algorithms with 100% MATLAB conversion.
 
@@ -244,15 +243,15 @@ string message                  # Status or error message
 catalyst_algorithms/
 ├── catalyst_algorithms/
 │   ├── __init__.py                      # Package initialization
-│   ├── enhanced_astar_plugin.py         # 🎯 Main A* algorithm (Production)
-│   ├── astar_plugin.py                  # 📚 Original A* implementation
-│   ├── motion_primitive_loader.py       # 🔄 Motion primitive management
-│   ├── collision_detection.py           # 🚧 Vehicle collision detection
-│   ├── cost_calculator.py               # 💰 G-cost and H-cost calculations
-│   ├── dpd_environment.py               # 🏢 DPD environment model
-│   ├── rectangular_heuristics.py        # 📐 Obstacle-aware heuristics
-│   └── virtual_obstacle_checker.py      # 👁️ Smart motion primitive selection
-├── test/                               # 🧪 Comprehensive test suite
+│   ├── enhanced_astar_plugin.py         # Main A* algorithm (Production)
+│   ├── astar_plugin.py                  # Original A* implementation
+│   ├── motion_primitive_loader.py       # Motion primitive management
+│   ├── collision_detection.py           # Vehicle collision detection
+│   ├── cost_calculator.py               # G-cost and H-cost calculations
+│   ├── dpd_environment.py               # DPD environment model
+│   ├── rectangular_heuristics.py        # Obstacle-aware heuristics
+│   └── virtual_obstacle_checker.py      # Smart motion primitive selection
+├── test/                               # Comprehensive test suite
 │   └── test_matlab_conversion_complete.py # Complete MATLAB validation
 ├── package.xml                         # ROS2 package metadata
 ├── setup.py                           # Python package setup
@@ -261,7 +260,7 @@ catalyst_algorithms/
 
 ### **Algorithm Components**
 
-#### **🎯 `enhanced_astar_plugin.py` - Production A* Algorithm**
+#### **`enhanced_astar_plugin.py` - Production A* Algorithm**
 ```python
 class EnhancedAStarPlugin(CatalystPlugin):
     """Production-ready A* path planner with complete MATLAB functionality."""
@@ -279,7 +278,7 @@ class EnhancedAStarPlugin(CatalystPlugin):
 - Conversion: Complete algorithm logic with all MATLAB parameters preserved
 - Compatibility: Exact same results as MATLAB implementation
 
-#### **🔄 `motion_primitive_loader.py` - Motion Primitive Management**
+#### **`motion_primitive_loader.py` - Motion Primitive Management**
 ```python
 class MotionPrimitiveLoader:
     """Load and process motion primitives from MATLAB .mat files."""
@@ -295,7 +294,7 @@ class MotionPrimitiveLoader:
 - Original: Motion primitive .mat files in `Parallel primitives/`
 - Conversion: SciPy-based .mat file reader with identical data structures
 
-#### **🚧 `collision_detection.py` - Vehicle Collision Detection**
+#### **`collision_detection.py` - Vehicle Collision Detection**
 ```python
 class CollisionDetector:
     """Articulated vehicle collision detection based on staticobs_check.m."""
@@ -311,7 +310,7 @@ class CollisionDetector:
 - Original: `staticobs_check.m`
 - Conversion: Exact geometric calculations with identical collision logic
 
-#### **💰 `cost_calculator.py` - Cost Calculation Engine**
+#### **`cost_calculator.py` - Cost Calculation Engine**
 ```python
 class CostCalculator:
     """G-cost and H-cost calculations from g_cost.m and h_cost.m."""
@@ -327,7 +326,7 @@ class CostCalculator:
 - Original: `g_cost.m`, `h_cost.m`
 - Conversion: Identical cost calculation algorithms with preserved parameters
 
-#### **🏢 `dpd_environment.py` - DPD Environment Model**
+#### **`dpd_environment.py` - DPD Environment Model**
 ```python
 class DPDEnvironmentBuilder:
     """Complete DPD scenario environment from MATLAB DPDscenario.m."""
@@ -343,7 +342,7 @@ class DPDEnvironmentBuilder:
 - Original: `DPDscenario.m`
 - Conversion: Exact obstacle definitions with identical coordinate arrays
 
-#### **📐 `rectangular_heuristics.py` - Advanced Heuristics**
+#### **`rectangular_heuristics.py` - Advanced Heuristics**
 ```python
 class RectangularHeuristics:
     """Obstacle-aware heuristic calculations from rectheur.m and rectheur1.m."""
@@ -359,7 +358,7 @@ class RectangularHeuristics:
 - Original: `rectheur.m`, `rectheur1.m`
 - Conversion: Complete heuristic logic with identical zone definitions
 
-#### **👁️ `virtual_obstacle_checker.py` - Motion Intelligence**
+#### **`virtual_obstacle_checker.py` - Motion Intelligence**
 ```python
 class VirtualObstacleChecker:
     """Smart motion primitive selection from virtualobs_check.m."""
@@ -385,7 +384,7 @@ class VirtualObstacleChecker:
 
 ---
 
-## 🚀 **4. CATALYST LAUNCH (`catalyst_launch/`)**
+## **4. CATALYST LAUNCH (`catalyst_launch/`)**
 
 **Purpose:** System orchestration and startup management for the complete CATALYST platform.
 
@@ -394,13 +393,13 @@ class VirtualObstacleChecker:
 ```
 catalyst_launch/
 ├── launch/
-│   └── catalyst_system.launch.py        # 🎬 Complete system launch
+│   └── catalyst_system.launch.py        # Complete system launch
 ├── package.xml                          # ROS2 package metadata
 └── config/                             # Configuration files
     └── default_config.yaml             # Default system configuration
 ```
 
-#### **🎬 `catalyst_system.launch.py` - System Orchestrator**
+#### **`catalyst_system.launch.py` - System Orchestrator**
 ```python
 def generate_launch_description():
     """Generate the complete CATALYST system launch description."""
@@ -428,7 +427,7 @@ def generate_launch_description():
 
 ---
 
-## 🚗 **5. CATALYST MODELS (`catalyst_models/`)**
+## **5. CATALYST MODELS (`catalyst_models/`)**
 
 **Purpose:** Vehicle dynamics models and simulation environment components.
 
@@ -452,14 +451,14 @@ catalyst_models/                         # 🏗️ Future Development
 
 ---
 
-## 📡 **6. CATALYST SENSORS (`catalyst_sensors/`)**
+## **6. CATALYST SENSORS (`catalyst_sensors/`)**
 
 **Purpose:** Sensor data processing and sensor fusion capabilities.
 
 ### **Sensor Architecture** (Planned)
 
 ```
-catalyst_sensors/                        # 🏗️ Future Development
+catalyst_sensors/                        # Future Development
 ├── lidar_processing/                    # LiDAR data processing
 ├── camera_processing/                   # Computer vision processing
 ├── radar_processing/                    # Radar data processing
@@ -476,14 +475,14 @@ catalyst_sensors/                        # 🏗️ Future Development
 
 ---
 
-## 📊 **7. CATALYST VISUALIZATION (`catalyst_visualization/`)**
+## **7. CATALYST VISUALIZATION (`catalyst_visualization/`)**
 
 **Purpose:** Visualization tools, monitoring dashboards, and debugging interfaces.
 
 ### **Visualization Architecture** (Planned)
 
 ```
-catalyst_visualization/                  # 🏗️ Future Development
+catalyst_visualization/                  # Future Development
 ├── rviz_plugins/                       # RViz2 custom plugins
 ├── monitoring_dashboard/               # System health monitoring
 ├── path_visualization/                 # Path planning visualization
@@ -500,7 +499,7 @@ catalyst_visualization/                  # 🏗️ Future Development
 
 ---
 
-## 🔄 **System Integration Architecture**
+## **System Integration Architecture**
 
 ### **Data Flow Diagram**
 
@@ -551,7 +550,7 @@ catalyst_visualization/                  # 🏗️ Future Development
 
 ---
 
-## 📊 **System Metrics & Performance**
+## **System Metrics & Performance**
 
 ### **Code Quality Metrics**
 
@@ -654,7 +653,7 @@ ros2 launch catalyst_launch catalyst_system.launch.py
 The CATALYST system represents a complete, production-ready autonomous vehicle navigation platform with:
 
 - **100% MATLAB Conversion:** All original algorithms preserved and enhanced
-- **Modular Architecture:** XX (work)-inspired layered design for maintainability
+- **Modular Architecture:** layered design for maintainability
 - **Production Quality:** Comprehensive testing and performance optimization
 - **Scalable Design:** Plugin-based architecture for future extensibility
 - **ROS2 Native:** Full ROS2 integration with standard interfaces
